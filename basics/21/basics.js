@@ -81,8 +81,8 @@ function driversLicense2(passTest) {
 driversLicense2(true);
 
 //here we can change a i2 value inside for but it will not be changed globally
-//so when we will print value outside of a block we will get 22 (not 5 like 
-//like with var), we say that i2 variable outside block and inside it are 
+//so when we will print value outside of a block we will get 22 (not 5 like
+//like with var), we say that i2 variable outside block and inside it are
 //completly different variables (they have the same name but are completly
 //different)
 let i2 = 22;
