@@ -39,6 +39,7 @@ for (var i1 = 0; i1 < 5; i1++) {
 }
 console.log("%c%s", "color: #917399", i1);
 
+
 //ES6
 //const for variables that should be immutable (constant value)
 const name2 = "Jim Door";
