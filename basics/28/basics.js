@@ -56,7 +56,7 @@ for (const cur of boxesArray2) {
 }
 
 //in es6 retrieving a number of element which meets some expectations (like all
-//elements where element is grater than 18) is simple we can use findIndex to 
+//elements where element is grater than 18) is simple we can use findIndex to
 //retrieve index of element
 console.log(ages.findIndex(curr => curr >= 18));
 //to get actual element (value of it) we do find
