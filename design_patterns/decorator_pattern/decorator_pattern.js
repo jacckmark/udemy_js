@@ -2,7 +2,7 @@
 class Dish {
     constructor() {}
     getPrice() {}
-    getDes() {}
+    getDescription() {}
 }
 
 //one of the dishes which will be decorated by sidedishes
@@ -13,12 +13,14 @@ class Steak extends Dish {
     getPrice() {
         return 13;
     }
-    getDes() {
+    getDescription() {
         return "Steak";
     }
 }
 
-//main decorator class all sidedishes are inheriting from class sidedish
+//main decorator class all sidedishes are inheriting from class sidedish, always
+//has common superclass with class that will be docorated by subclasses (subclasses
+//of this decorator)
 class SideDish extends Dish {
     constructor(dish) {
         super();
@@ -27,8 +29,8 @@ class SideDish extends Dish {
     getPrice() {
         return this.dish.getPrice();
     }
-    getDes() {
-        return this.dish.getDes();
+    getDescription() {
+        return this.dish.getDescription();
     }
 }
 
@@ -40,8 +42,8 @@ class Pommes extends SideDish {
     getPrice() {
         return super.getPrice() + 9;
     }
-    getDes() {
-        return super.getDes() + " Pommes";
+    getDescription() {
+        return super.getDescription() + " Pommes";
     }
 }
 
@@ -53,12 +55,12 @@ class Mayonnaise extends SideDish {
     getPrice() {
         return super.getPrice() + 12;
     }
-    getDes() {
-        return super.getDes() + " Mayonnaise";
+    getDescription() {
+        return super.getDescription() + " Mayonnaise";
     }
 }
 
 //actual decorating of steak with Pommes and Mayonnaise classes
 let dish = new Mayonnaise(new Pommes(new Steak()));
-console.log(dish.getDes());
+console.log(dish.getDescription());
 console.log(dish.getPrice());
