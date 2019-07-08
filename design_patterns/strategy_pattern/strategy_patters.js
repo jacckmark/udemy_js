@@ -1,4 +1,24 @@
 /* 
++-----------+    +Strategy       +--------------+
+|  Context  | <----------------+ |   Strategy   |
++-----------+                    +--------------+
+                +--------------> |  alghoritm   | <--------------+
+                |                |  blueprint   |                |
+                |                +--------------+                |
+                |                                                |
+                |                        ^                       |
+                |                        |                       |
+                +                        +                       +
+
+       +-----------------+      +-----------------+      +-----------------+
+       |ConcreteStrategy1|      |ConcreteStrategy2|      |ConcreteStrategy3|
+       +-----------------+      +-----------------+      +-----------------+
+       |    alghoritm    |      |    alghoritm    |      |    alghoritm    |
+       | implementation  |      | implementation  |      | implementation  |
+       +-----------------+      +-----------------+      +-----------------+
+*/
+
+/* 
 Strategy Pattern is best use when:
 -you need use several algorithms which have different variations (the bigger 
     alghoritm the better)

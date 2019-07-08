@@ -1,3 +1,16 @@
+/* 
++------------------+
+|    Singleton     |
++------------------+
+| unique instance  |
+| getInstance()    |
+| (method creating |
+| new singleton or |
+| returning existi |
+| ng one)          |
++------------------+
+*/
+
 //variable holding a singleton (by default it is null, thats how we know if
 //there is already some singleton created in memory)
 let _singleton = null;

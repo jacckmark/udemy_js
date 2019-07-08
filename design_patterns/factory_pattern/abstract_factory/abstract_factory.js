@@ -1,3 +1,26 @@
+/* 
+              +------------------+              +---------------+            +-----------------+
+              |  AbstractFactory | <----------+ |    Client     | +--------> |AbstractProductA |
+         +--> +------------------+ <---+        +---------------+        +-> +-----------------+ <-+
+         |    | createProductA() |     |                                 |                         |
+         |    | createProductB() |     |                                 +                         +
+         |    +------------------+     |
+         |                             |                         +----------------+       +---------------+
+         |                             |                         |   ProductA1    |       |   ProductA2   |
+         +                             +                         +----------------+       +---------------+
+
++------------------+        +------------------+
+| ConcreteFactory1 |        | ConcreteFactory2 |                             +-----------------+
++------------------+        +------------------+                             |AbstractProductB |
+| createProductA() |        | createProductA() |                         +-> +-----------------+ <-+
+| createProductB() |        | createProductB() |                         |                         |
++------------------+        +------------------+                         +                         +
+
+                                                                 +----------------+       +----------------+
+                                                                 |   ProductB1    |       |   ProductB2    |
+                                                                 +----------------+       +----------------+
+*/
+
 //class blueprint for creating concrete factories (if we would like to create
 //pizza ingredients factory it will be a pizzaIngredientsFactory)
 class AbstractFactory {

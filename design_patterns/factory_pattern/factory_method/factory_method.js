@@ -1,3 +1,23 @@
+/* 
+                                    +-----------------+
+                                    |    Creator      |
+                                    +-----------------+
++---------------+                   | factoryMethod() |
+|    Product    |                   |   operation()   |
++---------------+                   +-----------------+
+
+        ^                                    ^
+        |                                    |
+        |                                    |
+        +                                    +
+
++---------------+                   +-----------------+
+|ConcreteProduct| <---------------+ | ConcreteCreator |
++---------------+                   +-----------------+
+                                    | factoryMethod() |
+                                    +-----------------+
+*/
+
 //class blueprint for creating concrete products created by concrete creators
 //(like italianPizza created only by a italianPizzaPlace)
 class Product {

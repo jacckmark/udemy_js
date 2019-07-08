@@ -1,3 +1,27 @@
+/* 
++------------------+                   +--------------+
+|     Subject      |                   |   Observer   |
++------------------+ +---------------> +--------------+
+| addObserver()    |                   |    update()  |
+| deleteObserver() |                   +--------------+
+| notifyObserver() |
++------------------+                           ^
+                                               |
+         ^                                     |
+         |                                     |
+         |                                     |
+         +                                     +
+
++------------------+                   +----------------+
+|  ConcreteSubject |                   |ConcreteObserver|
++------------------+ <---------------+ +----------------+
+|    getState()    |                   |    update()    |
+|    setState()    |                   | observer state |
+| subject current  |                   +----------------+
+| state            |
++------------------+
+*/
+
 //subject class (works like subject class in java)
 class Subject {
     constructor() {

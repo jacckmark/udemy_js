@@ -1,3 +1,31 @@
+/* 
+               +---------------+
+               |   Component   |
+        +----> +---------------+ <-------+
+        |      |  operation()  |         |
+        |      +---------------+         |
+        |                                |
+        |                                |
+        +                                +
+
++-----------------+              +---------------+
+|ConcreteComponent|              |   Decorator   |
++-----------------+       +----> +---------------+ <---+
+|   operation()   |       |      |  operation()  |     |
++-----------------+       |      +---------------+     |
+                          |                            |
+                          |                            |
+                          +                            +
+
+                 +------------------+        +------------------+
+                 |ConcreteDecoratorA|        |ConcreteDecoratorB|
+                 +------------------+        +------------------+
+                 |   operation()    |        |   operation()    |
+                 |  added state or  |        |  added state or  |
+                 |     behavior     |        |     behavior     |
+                 +------------------+        +------------------+
+*/
+
 //main dish class, superclass of all dishes
 class Dish {
     constructor() {}
