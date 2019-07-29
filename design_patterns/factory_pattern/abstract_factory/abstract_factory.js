@@ -111,7 +111,7 @@ class ProductB2 extends AbstractProductB {
     }
 }
 
-//function running our abstract factory and creating some
+//function running our abstract factory and creating some products
 function init_AbstractFactory() {
     //create factory (ConcreteFactory1)
     let factory1 = new ConcreteFactory1();

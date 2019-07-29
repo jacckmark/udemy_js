@@ -27,56 +27,67 @@ Strategy Pattern is best use when:
 -most of your classes have related behaviours
  */
 
-//this class is like interface, it contains variable _strategy which points at
-//some strategy (1, 2 or 3)
-class StrategyManager {
+//this class is deciding what type of strategy (concrete strategy) we should
+//execute
+class Context {
+    constructor(type) {
+        switch (type) {
+            case "A":
+                this.strategy = new ConcreteStrategyA();
+                break;
+            case "B":
+                this.strategy = new ConcreteStrategyB();
+                break;
+            default:
+                this.strategy = new ConcreteStrategyA();
+        }
+    }
+
+    ContextInterface() {
+        this.strategy.AlgorithmInterface();
+    }
+}
+
+//blueprint for concrete strategies
+class Strategy {
+    constructor() {}
+
+    AlgorithmInterface() {}
+}
+
+//concrete strategies inheriting from strategy blueprint
+class ConcreteStrategyA extends Strategy {
     constructor() {
-        this._strategy = null;
-    }
-    //we need geter and setter to be able to access _strategy varaible (it is
-    //private one)
-    set strategy(strategy) {
-        this._strategy = strategy;
-    }
-    get strategy() {
-        return this._strategy;
+        super();
+        console.log("ConcreteStrategyA created");
     }
 
-    doAction() {
-        this._strategy.doAction();
+    //some alghoritm that will be run if we would run ContextInterface()
+    //function
+    AlgorithmInterface() {
+        console.log("ConcreteStrategyA algorithm");
+    }
+}
+class ConcreteStrategyB extends Strategy {
+    constructor() {
+        super();
+        console.log("ConcreteStrategyB created");
+    }
+
+    AlgorithmInterface() {
+        console.log("ConcreteStrategyB algorithm");
     }
 }
 
-//available strategies (each one has implemented method doAction())
-class Strategy1 {
-    doAction() {
-        console.log("I'm doing action from strategy nr 1");
-    }
-}
-class Strategy2 {
-    doAction() {
-        console.log("I'm doing action from strategy nr 2");
-    }
-}
-class Strategy3 {
-    doAction() {
-        console.log("I'm doing action from strategy nr 3");
-    }
+//context where we are creating contexts and deciding what type of strategies
+//associate to which context
+function init_Strategy() {
+    //context creation
+    let contextA = new Context("A");
+    let contextB = new Context("B");
+    //runninng choosen strategy alghoritms
+    contextA.ContextInterface();
+    contextB.ContextInterface();
 }
 
-//context/client of strategy pattern place where we are using/running methods
-//defined in strategies, decision which strategy we choose is made by strategy
-//manager
-const strategyManager = new StrategyManager();
-const strategy1 = new Strategy1();
-const strategy2 = new Strategy2();
-const strategy3 = new Strategy3();
-
-strategyManager.strategy = strategy1;
-strategyManager.doAction();
-
-strategyManager.strategy = strategy2;
-strategyManager.doAction();
-
-strategyManager.strategy = strategy3;
-strategyManager.doAction();
+init_Strategy();

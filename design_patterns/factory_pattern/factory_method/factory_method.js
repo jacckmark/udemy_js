@@ -59,7 +59,7 @@ class Creator {
                 .product instanceof ConcreteProduct1}.`
         );
         console.log(
-            `Is created (right now) product a instance of a ConcreteProduct1: ${this
+            `Is created (right now) product a instance of a ConcreteProduct2: ${this
                 .product instanceof ConcreteProduct2}.`
         );
     }
@@ -67,8 +67,8 @@ class Creator {
 
 //extends our inerface (class) for making one product and fills all methods with
 //proper implementation, also we say that this class decides what type of product
-//(if we would like to create a pizza factory this class will be named a for example
-//italianPizzaPlace)
+//we are making (if we would like to create a pizza factory this class will be
+//named a for example italianPizzaPlace)
 class ConcreteCreator1 extends Creator {
     constructor() {
         super();

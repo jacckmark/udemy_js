@@ -46,9 +46,9 @@ class Steak extends Dish {
     }
 }
 
-//main decorator class all sidedishes are inheriting from class sidedish, always
-//has common superclass with class that will be docorated by subclasses (subclasses
-//of this decorator)
+//main decorator class, all sidedishes are inheriting from class sidedish, which
+//always has common superclass with class that will be decorated by subclasses
+//(subclasses of this decorator)
 class SideDish extends Dish {
     constructor(dish) {
         super();
