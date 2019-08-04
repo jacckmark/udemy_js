@@ -36,7 +36,7 @@ console.log(fullAge.indexOf(true));
 console.log(ages[fullAge.indexOf(true)]);
 
 //ES6
-var boxes2 = document.querySelectorAll(".box2");
+let boxes2 = document.querySelectorAll(".box2");
 const boxesArray2 = Array.from(boxes2);
 //from will convert node list into array
 boxesArray2.forEach(cur => (cur.style.backgroundColor = "red"));
