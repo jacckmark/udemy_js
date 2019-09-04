@@ -1,7 +1,7 @@
 //DESTRUCTURING
 
 //ES5
-//destructuring data structure in ES5 would be done by hand (like bolove), we
+//destructuring data structure in ES5 would be done by hand (like below), we
 //would have to create new variables and point to right elements of for example
 //array
 var john1 = ["John", 26];
@@ -34,7 +34,7 @@ const { firstName: a, lastName: b } = obj;
 console.log(a);
 console.log(b);
 
-//we can also use destructuring to process return from a function (here we are 
+//we can also use destructuring to process return from a function (here we are
 //returning an array and in the next lines we are destructuring it into two
 //different variables)
 function calcAgeOfRetirement(year) {
