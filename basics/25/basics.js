@@ -15,7 +15,7 @@ var box5 = {
         document.querySelector(".green").addEventListener("click", function() {
             var str =
                 "This is box number " +
-                this.position +
+                self.position +
                 " and it is " +
                 self.color;
             alert(str);
@@ -34,14 +34,14 @@ box5.showPosition();
 const box6 = {
     color: "blue",
     position: 2,
-    //beware if we use here (on clickMe method) arrow function we will get 
-    //undefined when calling this, it is because arrow function shares lexical 
-    //scope of its surroundings so here with global context and there is no 
+    //beware if we use here (on clickMe method) arrow function we will get
+    //undefined when calling this, it is because arrow function shares lexical
+    //scope of its surroundings so here with global context and there is no
     //color or position in global context
     clickMe: function() {
-        //by using arrow function we have access to this keyword, because arrow 
-        //function shares the lexical this keyword of its surroundings (so when 
-        //we need to preserve the value of this keyword we would use arrow 
+        //by using arrow function we have access to this keyword, because arrow
+        //function shares the lexical this keyword of its surroundings (so when
+        //we need to preserve the value of this keyword we would use arrow
         //function)
         document.querySelector(".blue").addEventListener("click", () => {
             let str =
