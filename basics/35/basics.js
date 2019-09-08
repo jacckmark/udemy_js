@@ -7,6 +7,7 @@ const getIds = new Promise((resolve, reject) => {
         //(we can pass some log etc.) that we can then catch with "catch" method
         //when running a function with promise
         resolve([1, 22, 33, 55, 11, 31, 32]);
+        reject("Something went wrong...");
     }, 1500);
 });
 
